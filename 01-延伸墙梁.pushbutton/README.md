@@ -1,35 +1,40 @@
 # 延伸墙梁 / Extend Walls and Beams
 
-框选一批墙或梁，点选目标构件，自动批量延伸。
-
-Box-select multiple walls or beams, pick a target, and batch-extend them.
+Revit 2020 + pyRevit + IronPython 2.7 脚本。框选一批墙或梁，点选目标构件，自动批量延伸。
 
 ---
 
 ## 功能 / Features
 
-- 框选一批墙或梁 / Box-select multiple walls or beams
-- 点选一个目标构件 / Pick one target element
-- 自动延伸，无需逐个操作 / Batch extend, no one-by-one picking
-- 自动保护墙上的门窗 / Automatically protects doors and windows on walls
-- 自动跳过机电类构件 / Skips MEP elements (pipes, ducts, etc.)
+- **批量延伸**：无需逐个操作，框选后一键延伸到目标位置（支持超出目标线段的无限延长线）。
+- **门窗保护**：延伸墙体时，自动快照并搬回原有的门窗位置，绝不丢失门窗。
+- **智能跳过**：自动跳过机电管线、组内构件、被锁定的构件以及弧形/异形构件。
+- **异常容错**：如果某面墙延伸导致门窗被 Revit 删除，该面墙自动回滚，不影响其他墙。
 
 ---
 
 ## 使用方法 / Usage
 
-1. 点击按钮 / Click the button
-2. 框选要延伸的墙或梁，按 **Enter** 确认 / Box-select walls or beams, press **Enter**
-3. 点选一个目标构件 / Pick a target element
-4. 脚本自动处理，弹窗显示结果 / The script runs and shows a result dialog
+1. **框选构件**：在视图中框选需要延伸的墙或梁（可以框选多种）。
+2. **选择目标**：点击一下你要延伸到的“目标构件”（墙或梁均可）。
+3. **自动处理**：脚本自动计算交点，并在完成后弹窗显示成功与失败数量。
+
+---
+
+## 常用配置 / Configuration
+
+在 `script.py` 顶部修改：
+
+- `REFUSE_TO_SHORTEN = True`：默认拒绝“缩短”操作（因为缩短墙体会删掉门窗），如果你确实需要缩短，改为 `False`。
+- `EXTEND_FALLBACK = "line"`：默认延伸到目标构件的无限延长线。如果想要延伸到最近端点（会扭转墙体角度），改为 `"endpoint"`。
 
 ---
 
 ## 已知限制 / Known Limitations
 
-- 机电类构件不支持 / MEP elements are not supported
-- 梁的 LocationCurve setter 在部分环境下可能不可用 / The LocationCurve setter for beams may be read-only in some environments
-- 缩短构件的操作默认被拒绝（保护门窗） / Shortening operations are refused by default (to protect openings)
+1. **不支持机电管线**：风管、水管、桥架等 MEP 构件无法延伸，会自动跳过。
+2. **无法处理复杂约束**：如果墙体受限于某些特殊的约束条件（如附着到屋顶），可能导致延伸失败并跳过。
+3. **斜梁延伸**：虽然支持斜梁，但如果目标构件也是斜的，三维空间求交可能会有极微小的误差。
 
 ---
 
