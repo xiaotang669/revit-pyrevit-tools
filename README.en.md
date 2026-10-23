@@ -12,6 +12,8 @@ A collection of pyRevit tools for Autodesk Revit, built to handle repetitive mod
 |:---|:---|
 | [Extend Walls and Beams](./01-延伸墙梁.pushbutton/) | Box-select walls or beams and batch-extend them to a target |
 | [Column Top Elevation Align](./02-柱顶标高对齐.pushbutton/) | Input an absolute elevation (e.g., 10.32m) to instantly align the tops of selected columns. Perfect for irregular roofs. |
+| [Sync MEP Openings](./03-同步机电洞口.pushbutton/) | Batch sync wall/floor openings after MEP curves move. Supports linked models and cross-document coordinate transformation. |
+| [Beam Clearance](./04-梁下净高.pushbutton/) | Calculate beam clearance (supports reading structural beams/floors from linked models in MEP models) and generate/update text notes. |
 
 > More tools are on the way. Star this repo to stay updated.
 
