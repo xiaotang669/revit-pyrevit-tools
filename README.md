@@ -11,7 +11,7 @@
 | 工具 | 说明 |
 |:---|:---|
 | [延伸墙梁 / Extend Walls and Beams](./延伸墙梁.pushbutton/) | 框选一批墙或梁，点选目标构件，自动批量延伸 |
-| [柱顶标高对齐/ Column Top Elevation Align] (./柱顶标高对齐.pushbutton/) | 输入绝对标高（如 10.32m），一键将选中的结构柱顶部齐平，专治异形屋面。 |
+| [柱顶标高对齐 / Column Top Elevation Align](./柱顶标高对齐.pushbutton/) | 输入绝对标高（如 10.32m），一键将选中的结构柱顶部齐平，专治异形屋面。 |
 
 > 更多工具正在开发中，欢迎 Star 关注更新。
 
