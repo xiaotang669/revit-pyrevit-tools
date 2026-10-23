@@ -10,8 +10,8 @@ A collection of pyRevit tools for Autodesk Revit, built to handle repetitive mod
 
 | Tool | Description |
 |:---|:---|
-| [Extend Walls and Beams](./延伸墙梁.pushbutton/) | Box-select walls or beams and batch-extend them to a target |
-| [Column Top Elevation Align](./柱顶标高对齐.pushbutton/) | Input an absolute elevation (e.g., 10.32m) to instantly align the tops of selected columns. Perfect for irregular roofs. |
+| [Extend Walls and Beams](./01-延伸墙梁.pushbutton/) | Box-select walls or beams and batch-extend them to a target |
+| [Column Top Elevation Align](./02-柱顶标高对齐.pushbutton/) | Input an absolute elevation (e.g., 10.32m) to instantly align the tops of selected columns. Perfect for irregular roofs. |
 
 > More tools are on the way. Star this repo to stay updated.
 
